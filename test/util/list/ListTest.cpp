@@ -38,7 +38,7 @@ TEST_F(ListTest, PushHead_PushTail_Test) {
     EXPECT_EQ(list->getTail(), 7);
 }
 
-TEST_F(ListTest, GetValue_Test) {
+TEST_F(ListTest, GetValue_Test) { // [3, 4, 5, 6]
 
     EXPECT_EQ(list->getValue(0), 3);
     EXPECT_EQ(list->getValue(3), 6);
@@ -47,7 +47,7 @@ TEST_F(ListTest, GetValue_Test) {
     EXPECT_ANY_THROW(list->getValue(6));
 }
 
-TEST_F(ListTest, DeleteValue_Test) {
+TEST_F(ListTest, DeleteValue_Test) {  // [3, 4, 5, 6]
 
     list->deleteValue(2);
     EXPECT_TRUE(list->getValue(2) != 5);

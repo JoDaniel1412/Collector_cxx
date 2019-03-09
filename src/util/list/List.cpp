@@ -78,10 +78,18 @@ void List::deleteValue(int index) {
     if (index > size - 1) throw invalid_argument("Index out of range");
     if (index < 0) throw invalid_argument("Index cannot be less than 0");
 
-    Node *node = head;
-
-    for (int i = 0; i < index; i++) { // Search for the node
-        node = node->getNext();
+    Node *node;
+    if (index < size/2) { // Search the node from the Head
+        node = head;
+        for (int i = 0; i < index; i++) {
+            node = node->getNext();
+        }
+    }
+    else { // Search the node from the Tail
+        node = tail;
+        for (int i = size-1; i > index; i--) {
+            node = node->getPrev();
+        }
     }
 
     // Switch the node pointers

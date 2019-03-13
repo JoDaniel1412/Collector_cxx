@@ -17,8 +17,17 @@ add_executable(HelloWorld
         src/pointers/Pointers.cpp
         src/util/list/List.cpp
         src/util/list/List.h
-        test/util/list/ListTest.cpp
         src/util/list/node/Node.cpp
-        src/util/list/node/Node.h test/util/list/node/NodeTest.cpp src/util/collector/Collector.cpp src/util/collector/Collector.h src/util/collector/list/CList.cpp src/util/collector/list/CList.h src/util/collector/list/node/CNode.cpp src/util/collector/list/node/CNode.h test/util/collector/list/node/CNodeTest.cpp)
+        src/util/list/node/Node.h
+        src/util/collector/Collector.cpp
+        src/util/collector/Collector.h
+        src/util/collector/list/CList.cpp
+        src/util/collector/list/CList.h
+        src/util/collector/list/node/CNode.cpp
+        src/util/collector/list/node/CNode.h
+        test/util/list/ListTest.cpp
+        test/util/list/node/NodeTest.cpp
+        test/util/collector/list/node/CNodeTest.cpp
+        test/util/collector/list/CListTest.cpp)
 
 target_link_libraries(HelloWorld gtest gtest_main)

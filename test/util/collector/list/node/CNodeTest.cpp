@@ -9,4 +9,16 @@ TEST(CNodeTest, Getters_Setters) {
     CNode *node = new CNode();
 
     EXPECT_EQ(node->getNode(), nullptr);
+    EXPECT_EQ(node->getNext(), nullptr);
+    EXPECT_TRUE(node->isFree());
+
+    CNode *node2 = new CNode();
+
+    node->setNode(new Node);
+    node->setFree(false);
+    node->setNext(node2);
+
+    EXPECT_TRUE(node->getNode() != nullptr);
+    EXPECT_EQ(node->getNext(), node2);
+    EXPECT_FALSE(node->isFree());
 }

@@ -75,7 +75,7 @@ void List::deleteValue(int index) {
 
     Node *node = getNode(index);
 
-    // Switch the node pointers
+    // Switch the cnode pointers
     Node* nextNode = node->getNext();
     Node* prevNode = node->getPrev();
 
@@ -104,13 +104,13 @@ void List::clean() {
 
 Node *List::getNode(int index) {
     Node *node;
-    if (index < size/2) { // Search the node from the Head
+    if (index < size/2) { // Search the cnode from the Head
         node = head;
         for (int i = 0; i < index; i++) {
             node = node->getNext();
         }
     }
-    else { // Search the node from the Tail
+    else { // Search the cnode from the Tail
         node = tail;
         for (int i = size-1; i > index; i--) {
             node = node->getPrev();

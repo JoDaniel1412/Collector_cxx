@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../../../src/util/collector/list/CList.h"
+#include "../../../../src/util/collector/clist/CList.h"
 
 struct CListTest : testing::Test {
     CList *list;

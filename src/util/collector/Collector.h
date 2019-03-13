@@ -5,7 +5,7 @@
 #ifndef HELLOWORLD_COLLECTOR_H
 #define HELLOWORLD_COLLECTOR_H
 
-#include "list/CList.h"
+#include "clist/CList.h"
 
 class Collector {
 

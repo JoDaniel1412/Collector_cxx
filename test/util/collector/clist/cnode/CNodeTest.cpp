@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../../src/util/collector/list/node/CNode.h"
+#include "../../../../../src/util/collector/clist/cnode/CNode.h"
 
 TEST(CNodeTest, Getters_Setters) {
     CNode *node = new CNode();

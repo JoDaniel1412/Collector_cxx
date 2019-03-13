@@ -21,13 +21,13 @@ add_executable(HelloWorld
         src/util/list/node/Node.h
         src/util/collector/Collector.cpp
         src/util/collector/Collector.h
-        src/util/collector/list/CList.cpp
-        src/util/collector/list/CList.h
-        src/util/collector/list/node/CNode.cpp
-        src/util/collector/list/node/CNode.h
+        src/util/collector/clist/CList.cpp
+        src/util/collector/clist/CList.h
+        src/util/collector/clist/cnode/CNode.cpp
+        src/util/collector/clist/cnode/CNode.h
         test/util/list/ListTest.cpp
         test/util/list/node/NodeTest.cpp
-        test/util/collector/list/node/CNodeTest.cpp
-        test/util/collector/list/CListTest.cpp)
+        test/util/collector/clist/cnode/CNodeTest.cpp
+        test/util/collector/clist/CListTest.cpp)
 
 target_link_libraries(HelloWorld gtest gtest_main)

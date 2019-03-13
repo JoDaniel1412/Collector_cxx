@@ -9,7 +9,7 @@ struct ListTest : testing::Test {
     List *list;
 
     ListTest() : list(new List) {
-        // Fills the list : [3, 4, 5, 6]
+        // Fills the clist : [3, 4, 5, 6]
         list->pushTail(4);
         list->pushTail(5);
         list->pushHead(3);
@@ -22,9 +22,9 @@ struct ListTest : testing::Test {
 TEST_F(ListTest, PushHead_PushTail_Test) {
     list->clean();
 
-    EXPECT_EQ(0, list->getSize()); // Empty list
+    EXPECT_EQ(0, list->getSize()); // Empty clist
 
-    // Fills the list
+    // Fills the clist
     list->pushTail(4);
     list->pushTail(5);
     list->pushHead(3);
@@ -53,13 +53,13 @@ TEST_F(ListTest, DeleteValue_Test) {  // [3, 4, 5, 6]
     EXPECT_TRUE(list->getValue(2) != 5);
     EXPECT_EQ(list->getSize(), 3);
 
-    list->deleteValue(0); // Deletes the head from the list
+    list->deleteValue(0); // Deletes the head from the clist
     EXPECT_EQ(list->getHead(), 4);
     EXPECT_EQ(list->getSize(), 2);
 
     EXPECT_ANY_THROW(list->getValue(2));
 
     list->deleteValue(1);
-    EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the list in one element
+    EXPECT_EQ(list->getTail(), list->getHead()); // Deletes the tail and left the clist in one element
     EXPECT_EQ(list->getSize(), 1);
 }

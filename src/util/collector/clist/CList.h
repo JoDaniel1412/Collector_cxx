@@ -5,7 +5,7 @@
 #ifndef HELLOWORLD_CLIST_H
 #define HELLOWORLD_CLIST_H
 
-#include "node/CNode.h"
+#include "cnode/CNode.h"
 
 class CList {
 

@@ -3,7 +3,7 @@
 //
 
 #include "CList.h"
-#include "node/CNode.h"
+#include "cnode/CNode.h"
 
 void CList::add(Node *node) {
     auto *tmp = new CNode(node);

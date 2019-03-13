@@ -36,6 +36,9 @@ public:
     void deleteValue(int index);
 
     void clean();
+
+private:
+    Node* getNode(int index);
 };
 
 

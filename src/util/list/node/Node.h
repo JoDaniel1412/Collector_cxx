@@ -6,6 +6,8 @@
 #define HELLOWORLD_NODE_H
 #define NUll 0
 
+#include <stdlib.h>
+
 class Node {
 
 private:

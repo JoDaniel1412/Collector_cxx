@@ -6,6 +6,20 @@
 
 Node::Node(int value) : value(value) {}
 
+void *Node::operator new(size_t size) {
+    void *tmp = ::new Node();
+
+    Node *node = (Node *) tmp;
+    collector->add(node->getValue());
+    return tmp;
+}
+
+void *Node::operator delete(void *n) {
+    auto *node = (CNode *) n;
+    collector->removeN(node);
+    free(n);
+}
+
 int Node::getValue() const {
     return value;
 }

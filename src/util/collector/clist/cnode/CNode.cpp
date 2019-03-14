@@ -9,7 +9,16 @@ CNode::CNode(Node *node) {
     free = false;
 }
 
-Node *CNode::getNode() const {
+CNode::CNode(int value) {
+    Node *node = (Node *)(malloc(sizeof(Node)));
+    node->setValue(value);
+
+    this->node = node;
+    free = false;
+};
+
+
+Node *CNode::getNode(){
     return node;
 }
 
@@ -31,4 +40,4 @@ bool CNode::isFree() const {
 
 void CNode::setFree(bool free) {
     CNode::free = free;
-};
+}

@@ -18,9 +18,9 @@ public:
 
     ~CList() = default;
 
-    void add(Node *node);
+    CNode * add(int value);
 
-    void remove(int index);
+    void remove(Node * n);
 
     CNode *getHead() const;
 

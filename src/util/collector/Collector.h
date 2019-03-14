@@ -6,18 +6,22 @@
 #define HELLOWORLD_COLLECTOR_H
 
 #include "clist/CList.h"
+#include "../list/node/Node.h"
 
 class Collector {
 
 private:
+    static Collector *instance = nullptr;
     CList list;
 
 public:
     ~Collector() = default;
 
-    void add(Node *node);
+    Node * add(int value);
 
-    void remove(int index);
+    void removeN(Node * node);
+
+    Collector * getInstance();
 
 };
 

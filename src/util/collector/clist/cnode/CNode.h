@@ -21,7 +21,9 @@ public:
 
     explicit CNode(Node *node);
 
-    Node *getNode() const;
+    explicit CNode(int value);
+
+    Node *getNode();
 
     void setNode(Node *node);
 

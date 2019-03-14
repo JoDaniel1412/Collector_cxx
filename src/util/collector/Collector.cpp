@@ -5,23 +5,30 @@
 #include "Collector.h"
 
 
-void Collector::add(Node *node) {
+Node * Collector::add(int value) {
     CNode *tmp = list.getHead();
 
-    if (tmp == nullptr) list.add(node); // If the CList is empty
+    if (tmp == nullptr) tmp = list.add(value); // If the CList is empty
     else {
         while (tmp->getNext()) {
             if (tmp->isFree()) { // Checks for the first free memory location
-                tmp->setNode(node);
+                tmp->getNode()->setValue(value);
+                tmp->setFree(false);
                 break;
             }
             else { // Creates a new CNode in the Collector
-                list.add(node);
+                tmp = list.add(value);
             }
         }
     }
+
+    return tmp->getNode();
 }
 
-void Collector::remove(int index) {
-    list.remove(index);
+void Collector::removeN(Node * node) {
+    list.remove(node);
+}
+
+Collector *Collector::getInstance() {
+    return instance;
 }

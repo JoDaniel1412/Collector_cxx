@@ -5,24 +5,26 @@
 #include "CList.h"
 #include "cnode/CNode.h"
 
-void CList::add(Node *node) {
-    auto *tmp = new CNode(node);
+CNode * CList::add(int value) {
+    auto *tmp = new CNode(value);
 
     if (head == nullptr) head = tail = tmp;
     else {
         tail->setNext(tmp);
         tail = tmp;
     }
+    return tmp;
 }
 
-void CList::remove(int index) {
+void CList::remove(Node *n) {
     CNode *node = head;
 
-    for (int i = 0; i < index; i++) {
-        node = node->getNext();
+    while (node->getNext()) {
+        if (node->getNode() == n) {
+            node->setFree(true);
+            break;
+        }
     }
-
-    node->setFree(true);
 }
 
 CNode *CList::getHead() const {

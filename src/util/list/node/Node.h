@@ -7,6 +7,7 @@
 #define NUll 0
 
 #include <stdlib.h>
+#include "../../collector/Collector.h"
 
 class Node {
 
@@ -14,6 +15,7 @@ private:
     int value = NUll;
     Node *next = nullptr;
     Node *prev = nullptr;
+    static Collector *collector = Collector::getInstance();
 
 public:
     Node() = default;
@@ -33,6 +35,11 @@ public:
     Node *getPrev() const;
 
     void setPrev(Node *prev);
+
+    void * operator new(size_t size);
+
+    void * operator delete(void * n)
+
 };
 
 
